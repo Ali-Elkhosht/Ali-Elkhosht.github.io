@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #003366; /* Deep Blue */
+    --secondary-color: #4DB6AC; /* Teal */
+    --accent-color: #FFD700; /* Gold - for subtle highlights, maybe borders */
+    --background-color: #f8f9fa; /* Light Grey */
+    --text-color: #333333;
+    --light-text-color: #ffffff;
+    --grey-text-color: #666666;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 2rem 0; /* Increased padding */
+    text-align: center;
+}
+
+header h1 {
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--secondary-color); /* Use secondary color for subtitle */
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--light-text-color); /* White background for content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Experience & Education list styling */
+main ul li {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+main ul li strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+main ul li em {
+    font-style: normal;
+    color: var(--grey-text-color);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+}
+
+/* Skills list styling */
+h2 + p + ul {
+    border-left: none;
+    padding-left: 0;
+}
+
+h2 + p + ul li {
+    background-color: var(--secondary-color); /* Use secondary color for skills */
+    color: var(--light-text-color); /* Light text on skills */
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 0.7rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+    border-left: none;
+    padding-left: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    color: var(--grey-text-color);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        margin: 1.5rem;
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+    main {
+        margin: 1rem;
+        padding: 0.8rem;
+        border-radius: 0;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    main ul li strong {
+        font-size: 1rem;
+    }
+    /* Stack skills vertically */
+    h2 + p + ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Profile Photo Styling */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border: 5px solid var(--light-text-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Language Switch Button */
+.lang-switch-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+#lang-toggle {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+#lang-toggle:hover {
+    background-color: var(--primary-color);
+}
+
+/* RTL Styling */
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+html[dir="rtl"] main ul li {
+    padding-left: 0;
+    padding-right: 1rem;
+    border-left: none;
+    border-right: 3px solid var(--secondary-color);
+}
+
+html[dir="rtl"] h2 + p + ul li {
+    margin-right: 0;
+    margin-left: 0.7rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    border-right: none;
+}
+
+html[dir="rtl"] .lang-switch-container {
+    right: auto;
+    left: 1rem;
+}
+
+/* Adjust list item alignment for RTL */
+html[dir="rtl"] ul {
+    padding-right: 0;
+}
+
+
