@@ -1,88 +1,184 @@
+<!-- =========================
+index.html  (ELEGANT + INTERACTIONS)
+========================= -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="pageTitle">Ali Ashraf Elkhosht - Professional Profile</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title data-translate="pageTitle">Ali Ashraf Elkhosht - Professional Profile</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="lang-switch-container">
-        <button id="lang-toggle" data-translate="switchLangButton">العربية</button>
+  <!-- Language -->
+  <div class="lang-switch-container">
+    <button id="lang-toggle" class="btn ghost" data-translate="switchLangButton" aria-label="Toggle language">العربية</button>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <img src="profile_photo.jpg" alt="Ali Ashraf Elkhosht" class="avatar reveal"/>
+      <div class="hero-text reveal">
+        <h1 class="title hover-underline" data-translate="profileName">Ali Ashraf Elkhosht</h1>
+        <p class="subtitle" data-translate="profileSubtitle">IT Manager | Odoo Functional | Web Developer</p>
+      </div>
+      <div class="hero-actions reveal">
+        <a class="pill" href="tel:+966563162045"><span class="pill-label" data-translate="phoneLabel">Phone:</span> +966 56 316 2045</a>
+        <a class="pill" href="mailto:elkhosht80@gmail.com"><span class="pill-label" data-translate="emailLabel">Email:</span> elkhosht80@gmail.com</a>
+        <a class="pill" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/ali-ashraf-86a3b9199"><span class="pill-label" data-translate="linkedinLabel">LinkedIn:</span> ali-ashraf-86a3b9199</a>
+      </div>
     </div>
-    <header>
-        <img src="profile_photo.jpg" alt="Ali Ashraf Elkhosht" class="profile-photo">
-        <h1 data-translate="profileName">Ali Ashraf Elkhosht</h1>
-        <p data-translate="profileSubtitle">IT Manager | Odoo Implementer | FrontEnd Developer</p>
-    </header>
-    <main id="profile-content">
-        <h2 data-translate="contactTitle">Contact</h2>
-        <p><span data-translate="emailLabel">Email:</span> <a href="mailto:elkhosht80@gmail.com">elkhosht80@gmail.com</a></p>
-        <p><span data-translate="linkedinLabel">LinkedIn:</span> <a href="https://www.linkedin.com/in/ali-ashraf-86a3b9199" target="_blank">linkedin.com/in/ali-ashraf-86a3b9199</a></p>
+  </header>
 
-        <h2 data-translate="summaryTitle">Summary</h2>
-        <p data-translate="summaryText">Ali Ashraf Elkhosht is an IT professional with over three years of experience, demonstrating a strong commitment to excellence in technology services. His career progression shows a transition from IT Specialist roles to his current position as an IT Manager. He emphasizes leveraging his skills in IT management and proficiency with tools like Microsoft Office to enhance technology infrastructure. Ali is dedicated to delivering robust and reliable IT solutions, aligning his competencies with organizational vision, and fostering an environment of innovation and continuous improvement. His approach values forward-thinking and strategic technology advancement.</p>
+  <main>
+    <!-- SUMMARY -->
+    <section class="section">
+      <div class="container card reveal">
+        <h2 class="section-title hover-underline" data-translate="summaryTitle">Summary</h2>
+        <p class="lead" data-translate="summaryText">
+          IT Manager with 5+ years of experience leading cross-functional teams and delivering end-to-end Odoo implementations and digital transformation. Strong in business analysis (As-Is/To-Be, Gap Analysis, requirements), UAT, training, and data migration. Professional in Odoo Studio and building websites on Odoo. Experienced with email & domain infrastructure across Microsoft 365, Google Workspace, Zoho, GoDaddy/cPanel/Cloudflare—including DNS (MX, SPF, DKIM, DMARC) and SMTP/IMAP—plus website and hosting configurations. Committed to robust, reliable solutions aligned with business goals and continuous improvement.
+        </p>
+      </div>
+    </section>
 
-        <h2 data-translate="experienceTitle">Experience</h2>
-        <ul>
-            <li>
-                <strong data-translate="exp1Title">IT Manager</strong> at <span data-translate="exp1Company">Bin Shujaa Co.</span> (<span data-translate="exp1Location">Riyadh, Saudi Arabia</span>)<br>
-                <em data-translate="exp1DurationLabel">Duration:</em> <span data-translate="exp1Duration">October 2024 – Present (7 months as of April 2025)</span><br>
-                <em data-translate="exp1SkillsLabel">Key Skills Mentioned:</em> <span data-translate="exp1Skills">Odoo implementation, Systems Analysis.</span>
-            </li>
-            <li>
-                <strong data-translate="exp2Title">Senior Information Technology Engineer</strong> at <span data-translate="exp2Company">Yama Engineering Systems</span> (<span data-translate="exp2Location">Cairo, Egypt</span>)<br>
-                <em data-translate="exp2DurationLabel">Duration:</em> <span data-translate="exp2Duration">May 2022 – Present (3 years as of April 2025)</span><br>
-                <em data-translate="exp2SkillsLabel">Key Skills Mentioned:</em> <span data-translate="exp2Skills">Linux System Administration, Object-Oriented Programming (OOP).</span>
-            </li>
-            <li>
-                <strong data-translate="exp3Title">IT Specialist</strong> at <span data-translate="exp3Company">Safeco Group</span> (<span data-translate="exp3Location">Cairo, Egypt</span>)<br>
-                <em data-translate="exp3DurationLabel">Duration:</em> <span data-translate="exp3Duration">May 2021 – May 2022 (1 year 1 month)</span><br>
-                <em data-translate="exp3SkillsLabel">Key Skills Mentioned:</em> <span data-translate="exp3Skills">IT Management, Technology Services.</span>
-            </li>
-            <li>
-                <strong data-translate="exp4Title">Full Stack Developer</strong> at <span data-translate="exp4Company">Information Technology Institute (ITI)</span> (<span data-translate="exp4Location">Remote - Beni Suef, Egypt</span>)<br>
-                <em data-translate="exp4DurationLabel">Duration:</em> <span data-translate="exp4Duration">September 2020 – January 2021 (5 months)</span><br>
-                <em data-translate="exp4SkillsLabel">Key Skills Mentioned:</em> <span data-translate="exp4Skills">Full-Stack Development, Dotnet.</span>
-            </li>
-        </ul>
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="container card reveal">
+        <h2 class="section-title hover-underline" data-translate="experienceTitle">Experience</h2>
+        <ol class="timeline">
+          <li class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h3 class="tl-role"> <span data-translate="exp1Title">IT Manager</span></h3>
+              <p class="muted"><span data-translate="exp1Company">Bin Shujaa Co.</span> — <span data-translate="exp1Location">Riyadh, Saudi Arabia</span></p>
+              <p class="meta"><em data-translate="exp1DurationLabel">Duration:</em> <span data-translate="exp1Duration">October 2024 – Present</span></p>
+              <p><em data-translate="exp1SkillsLabel">Key Skills Mentioned:</em>
+                <span data-translate="exp1Skills">Project Manager; Team Leading; Business Cycle Analysis; Requirement Gathering; UAT; Training; Data Migration; Digital Transformation (lead); Odoo Supervision; Odoo Functional; Built the company website; configured & manage corporate email/domain infrastructure.</span>
+              </p>
+            </div>
+          </li>
 
-        <h2 data-translate="educationTitle">Education</h2>
-        <ul>
-            <li>
-                <strong data-translate="edu1School">Information Technology Institute (ITI)</strong><br>
-                <em data-translate="edu1DegreeLabel">Degree:</em> <span data-translate="edu1Degree">Bachelor's degree, Computer Software Engineering</span><br>
-                <em data-translate="edu1DurationLabel">Duration:</em> <span data-translate="edu1Duration">September 2020 – January 2021</span><br>
-                <em data-translate="edu1GradeLabel">Grade:</em> <span data-translate="edu1Grade">Excellent</span><br>
-                <em data-translate="edu1FocusLabel">Focus:</em> <span data-translate="edu1Focus">.Net Full Stack web development</span><br>
-                <em data-translate="edu1SkillsLabel">Key Skills Mentioned:</em> <span data-translate="edu1Skills">AngularJS, C#.</span>
-            </li>
-            <li>
-                <strong data-translate="edu2School">El Shorouk Academy</strong> (<span data-translate="edu2Location">Egypt</span>)<br>
-                <em data-translate="edu2DegreeLabel">Degree:</em> <span data-translate="edu2Degree">Bachelor's degree, Computer Science</span><br>
-                <em data-translate="edu2DurationLabel">Duration:</em> <span data-translate="edu2Duration">September 2014 – June 2018 (3 years 10 months)</span>
-            </li>
-        </ul>
+          <li class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h3 class="tl-role"><span data-translate="exp2Title">Senior Information Technology Engineer</span></h3>
+              <p class="muted"><span data-translate="exp2Company">Yama Engineering Systems</span> — <span data-translate="exp2Location">Cairo, Egypt</span></p>
+              <p class="meta"><em data-translate="exp2DurationLabel">Duration:</em> <span data-translate="exp2Duration">January 2022 – October 2024 </span></p>
+              <p><em data-translate="exp2SkillsLabel">Key Skills Mentioned:</em>
+                <span data-translate="exp2Skills">Project Manager; Team Leading; Business Cycle Analysis; Requirement Gathering; UAT; Training; Data Migration; Digital Transformation; Odoo Supervision; Odoo Functional; Built the company website; configured & managed corporate email/domain; Linux System Administration; Object-Oriented Programming (OOP).</span>
+              </p>
+            </div>
+          </li>
 
-        <h2 data-translate="skillsTitle">Skills</h2>
-        <p data-translate="skillsIntro">Ali possesses a diverse skill set spanning IT management, systems analysis, software development, and specific technologies. Key areas include:</p>
-        <ul>
-            <li><strong data-translate="skillsCat1">IT Management & Operations:</strong> <span data-translate="skillsList1">IT Management, Technology Services, Project Management, Linux System Administration.</span></li>
-            <li><strong data-translate="skillsCat2">ERP & Business Systems:</strong> <span data-translate="skillsList2">Odoo implementation, Systems Analysis, Business Systems Analysis, Software System Analysis.</span></li>
-            <li><strong data-translate="skillsCat3">Software Development:</strong> <span data-translate="skillsList3">Full-Stack Development, Object-Oriented Programming (OOP).</span></li>
-            <li><strong data-translate="skillsCat4">Microsoft Technologies:</strong> <span data-translate="skillsList4">.NET Framework (ASP.NET, ASP.NET MVC, ASP.NET Core, .NET Core), C#.</span></li>
-            <li><strong data-translate="skillsCat5">Web Technologies:</strong> <span data-translate="skillsList5">REST APIs, ASP.NET Web API, AngularJS, Postman API, WordPress.</span></li>
-            <li><strong data-translate="skillsCat6">Operating Systems:</strong> <span data-translate="skillsList6">Microsoft Windows, MacOS, Ubuntu.</span></li>
-        </ul>
+          <li class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h3 class="tl-role"><span data-translate="exp3Title">IT Specialist</span></h3>
+              <p class="muted"><span data-translate="exp3Company">Safeco Group</span> — <span data-translate="exp3Location">Cairo, Egypt</span></p>
+              <p class="meta"><em data-translate="exp3DurationLabel">Duration:</em> <span data-translate="exp3Duration">April 2021 – January 2022 </span></p>
+              <p><em data-translate="exp3SkillsLabel">Key Skills Mentioned:</em> <span data-translate="exp3Skills">IT Management, Technology Services.</span></p>
+            </div>
+          </li>
 
-        <!-- <p><em data-translate="noteText">(Note: This summary is based on information from LinkedIn profile screenshots and PDF provided by Ali Ashraf Elkhosht.)</em></p> -->
-    
-    </main>
-    <footer>
-        <!-- <p data-translate="footerText">Generated by Manus AI</p> -->
-    </footer>
+          <li class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h3 class="tl-role"><span data-translate="exp4Title">Full Stack Developer</span></h3>
+              <p class="muted"><span data-translate="exp4Company">Information Technology Institute (ITI)</span> — <span data-translate="exp4Location">Remote - Beni Suef, Egypt</span></p>
+              <p class="meta"><em data-translate="exp4DurationLabel">Duration:</em> <span data-translate="exp4Duration">September 2020 – January 2021 </span></p>
+              <p><em data-translate="exp4SkillsLabel">Key Skills Mentioned:</em> <span data-translate="exp4Skills">Full-Stack Development, Dotnet.</span></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="container card reveal">
+        <h2 class="section-title hover-underline" data-translate="educationTitle">Education</h2>
+        <div class="edu">
+          <div class="edu-item">
+            <h3 data-translate="edu1School">Information Technology Institute (ITI)</h3>
+            <p class="meta"><em data-translate="edu1DegreeLabel">Degree:</em> <span data-translate="edu1Degree">Bachelor's degree, Computer Software Engineering</span></p>
+            <p class="meta"><em data-translate="edu1DurationLabel">Duration:</em> <span data-translate="edu1Duration">September 2020 – January 2021</span></p>
+            <p class="meta"><em data-translate="edu1GradeLabel">Grade:</em> <span data-translate="edu1Grade">Excellent</span></p>
+            <p class="meta"><em data-translate="edu1FocusLabel">Focus:</em> <span data-translate="edu1Focus">.Net Full Stack web development</span></p>
+            <p class="meta"><em data-translate="edu1TrackLabel">Track:</em> <span data-translate="edu1Track">.NET Full Stack Web Development</span></p>
+            <p class="meta"><em data-translate="edu1CoveredLabel">Covered:</em>
+              <span data-translate="edu1Covered">HTML, CSS, JavaScript, Responsive Web Design, OOP using C#, Visual C# .NET (Framework 4.5), LINQ & Entity Framework, ADO.NET, MS SQL Server Programming, Angular Fundamentals, ASP.NET MVC Core, Web API, Freelancing, Soft Skills (communication, presentation, interviewing).</span>
+            </p>
+            <p class="meta"><em data-translate="edu1SkillsLabel">Key Skills Mentioned:</em> <span data-translate="edu1Skills">AngularJS, C#.</span></p>
+          </div>
+
+          <div class="edu-item">
+            <h3><span data-translate="edu2School">El Shorouk Academy</span> (<span data-translate="edu2Location">Egypt</span>)</h3>
+            <p class="meta"><em data-translate="edu2DegreeLabel">Degree:</em> <span data-translate="edu2Degree">Bachelor's degree, Computer Science</span></p>
+            <p class="meta"><em data-translate="edu2DurationLabel">Duration:</em> <span data-translate="edu2Duration">September 2014 – June 2018 (3 years 10 months)</span></p>
+            <p class="meta"><em data-translate="edu2CourseworkLabel">Core Coursework:</em>
+              <span data-translate="edu2Coursework">OOP, Data Structures, System Design, Systems Analysis, Operating Systems, Computer Graphics, Computer Networks, C, C++, C#, Python, JavaScript, and additional Computer Science modules.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (GRID CARDS WITH HOVER/ANIMATION) -->
+    <section class="section">
+      <div class="container card reveal">
+        <h2 class="section-title hover-underline" data-translate="skillsTitle">Skills</h2>
+        <p class="muted" data-translate="skillsIntro">Ali possesses a diverse skill set spanning IT management, business analysis, Odoo functional implementation, email/domain infrastructure, and software technologies. Key areas include:</p>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatOdoo">Odoo Functional & ERP:</h3>
+            <p class="skill-body" data-translate="skillsListOdoo">Odoo Implementation, Requirement Gathering, Gap Analysis, Business Process Mapping (BPMN), Configuration & Parameterization, Data Migration, UAT, End-User Training, Change Management, Professional in Odoo Studio and building websites using Odoo, Reporting & Dashboards, Multi-company/Multi-currency. Modules: CRM, Sales, Purchase, Inventory, Accounting, Invoicing, HR, Projects, Manufacturing (basic), POS.</p>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatMail">Email & Domain Infrastructure:</h3>
+            <p class="skill-body" data-translate="skillsListMail">DNS & Mail Records (A/CNAME/MX/SPF/DKIM/DMARC), SMTP/IMAP/POP, Email routing/relays, Mail flow troubleshooting, Migrations & cutover. Providers: Microsoft 365 (Office 365), Zoho Mail, GoDaddy, Google Workspace, cPanel, Cloudflare.</p>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatWebInfra">Website & Hosting Configurations:</h3>
+            <!-- header only per request -->
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatBA">Business Analysis & Delivery:</h3>
+            <p class="skill-body" data-translate="skillsListBA">Stakeholder Management, As-Is/To-Be Analysis, Documentation (BRD/SRS), Agile/Scrum, Jira, Risk & Issue Tracking, KPI Design.</p>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatLeadership">Leadership & Teamwork:</h3>
+            <p class="skill-body" data-translate="skillsListLeadership">Team Leading, Task Assignment, Cross-functional Collaboration, Vendor Coordination, Training & Coaching.</p>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatIT">IT Management & Operations:</h3>
+            <p class="skill-body" data-translate="skillsListIT">IT Management, Technology Services, Project Management, Linux System Administration.</p>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatMS">Microsoft & Web Technologies:</h3>
+            <p class="skill-body" data-translate="skillsListMS">.NET (ASP.NET, MVC, Core), C#, REST APIs, ASP.NET Web API, AngularJS, Postman API, WordPress.</p>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-title" data-translate="skillsCatOS">Operating Systems:</h3>
+            <p class="skill-body" data-translate="skillsListOS">Microsoft Windows, MacOS, Ubuntu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><small>&copy; <span id="year"></span> · <span data-translate="profileName">Ali Ashraf Elkhosht</span></small></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
