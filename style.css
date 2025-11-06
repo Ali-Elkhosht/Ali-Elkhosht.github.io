@@ -1,228 +1,303 @@
-:root {
-    --primary-color: #003366; /* Deep Blue */
-    --secondary-color: #4DB6AC; /* Teal */
-    --accent-color: #FFD700; /* Gold - for subtle highlights, maybe borders */
-    --background-color: #f8f9fa; /* Light Grey */
-    --text-color: #333333;
-    --light-text-color: #ffffff;
-    --grey-text-color: #666666;
-    --border-color: #e0e0e0;
+/* =========================================
+style.css  — THEME + HOVER + RTL + SUMMARY & PILLS + CENTER & AVATAR 10%
+========================================= */
+
+/* ---------- Theme Vars ---------- */
+:root{
+  --bg:#f4f1eb;
+
+  --dark-panel:#0e1a2b;
+  --dark-ink:#ffffff;
+  --dark-muted:rgba(255,255,255,.85);
+  --dark-divider:rgba(255,255,255,.65);
+
+  --light-panel:#ffffff;
+  --light-ink:#0e1626;
+  --light-muted:#334155;
+  --light-divider:rgba(14,22,38,.28);
+
+  --line:#e7ebf2;
+  --accent:#3b82f6;
+  --accent-2:#7c3aed;
+  --accent-veil:#eef3ff;
+
+  --shadow:0 12px 32px rgba(2,6,23,.12);
+
+  --fs-p:1.12rem;
+  --fs-h2:1.90rem;
+  --fs-h3:1.28rem;
+  --fs-meta:1.06rem;
 }
 
-body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
+/* ==== width & typography +20% ==== */
+.container{ max-width:1176px !important; }          /* 980 * 1.2 */
+html{ font-size:120% !important; }
+@media (max-width:720px){
+  html{ font-size:110% !important; }
+  .container{ max-width:min(100%,640px) !important; }
 }
 
-header {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 2rem 0; /* Increased padding */
-    text-align: center;
+/* ---------- Base ---------- */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;
+  background:radial-gradient(1200px 680px at 10% -10%, #ffffff 0%, var(--bg) 58%, #efeae2 100%);
+  color:#0e1626; line-height:1.72;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.container{
+  max-width:1176px;           /* تأكيد */
+  margin-left:auto;
+  margin-right:auto;          /* توسيط فعلي */
+  padding-left:24px;
+  padding-right:24px;
+}
+.section{padding:34px 0}
+
+/* ---------- Lang Button ---------- */
+.lang-switch-container{position:fixed;top:14px;right:14px;z-index:50}
+html[dir="rtl"] .lang-switch-container{right:auto;left:14px}
+.btn{
+  border:1px solid var(--line);background:#ffffffc8;color:#0e1626;
+  padding:.55rem .95rem;border-radius:999px;font-weight:700;cursor:pointer;
+  transition:box-shadow .2s ease,background .2s ease,border-color .2s ease;
+}
+.btn.ghost:hover{box-shadow:0 8px 22px rgba(2,6,23,.10);background:#fff}
+
+/* ---------- Hover underline ---------- */
+.hover-underline{position:relative;display:inline-block}
+.hover-underline::after{
+  content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;
+  background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+}
+.hover-underline:hover::after{transform:scaleX(1)}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:78px 0 28px;
+  background:linear-gradient(180deg,#0b1728 0%,#0a1523 100%);
+  border-bottom:1px solid #0a1523; color:#fff;
+}
+.hero-inner{text-align:center}
+
+/* Avatar: 140px + hover scale 10% + white ring */
+.avatar{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 14px;
+  border:4px solid #fff;                             /* إطار أبيض دائم */
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+  transition:transform .25s ease, box-shadow .25s ease;
+  will-change:transform;
+}
+.avatar:hover{
+  transform:scale(1.10);                              /* تكبير 10% */
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,.95),                 /* حلقة بيضاء خارجية */
+    0 24px 60px rgba(0,0,0,.28);                     /* شادو أعمق */
 }
 
-header h1 {
-    margin: 0.5rem 0;
-    font-size: 2.5rem;
+.title{margin:0;font-size:2.4rem;font-weight:900;letter-spacing:.2px}
+.subtitle{margin:8px 0 0;color:rgba(255,255,255,.9);font-weight:700}
+
+/* Contact pills */
+.hero-actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
+.pill{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;
+  background:#0e1a2b;border:1px solid rgba(255,255,255,.12);border-radius:999px;
+  text-decoration:none;color:#fff;font-weight:800;box-shadow:0 3px 10px rgba(2,6,23,.25);
+  transition:background .22s ease,border-color .22s ease,color .22s ease,box-shadow .22s ease;
+}
+.pill .pill-label{color:#cbd5e1;font-weight:800}
+.pill:hover{background:#ffffff;color:#0e1626;border-color:#d9e4ff;box-shadow:0 12px 28px rgba(2,6,23,.22)}
+
+/* ---- RTL pills fix: label RTL, value LTR ---- */
+html[dir="rtl"] .hero-actions{ justify-content:center; }
+html[dir="rtl"] .pill{ direction:rtl; text-align:right; }
+.pill .pill-value{ direction:ltr; unicode-bidi:plaintext; }
+html[dir="rtl"] .pill{ flex-direction:row; }
+html[dir="rtl"] .pill .pill-label{ order:1; }
+html[dir="rtl"] .pill .pill-value{ order:2; }
+/* fallback لو مش مضاف .pill-value */
+html[dir="rtl"] .pill > span:last-child{ direction:ltr; unicode-bidi:plaintext; }
+
+/* ---------- Cards (dark → light on hover) ---------- */
+.card,.edu-item,.skill-card{
+  background:var(--dark-panel); color:var(--dark-ink);
+  border:1px solid rgba(255,255,255,.08); border-radius:18px; box-shadow:var(--shadow);
+  transition:background .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.card{padding:26px}
+.edu-item{padding:16px}
+.skill-card{padding:18px 18px 20px;min-height:230px;display:flex;flex-direction:column}
+
+/* inherit colors inside */
+.card *,.edu-item *,.skill-card *{color:inherit}
+
+/* section title in cards */
+.section-title{
+  font-size:var(--fs-h2);font-weight:900;letter-spacing:.2px;margin:0 0 12px;
+  padding-bottom:12px;border-bottom:2px solid var(--dark-divider);
 }
 
-header p {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--secondary-color); /* Use secondary color for subtitle */
+/* links in cards */
+.card a,.edu-item a,.skill-card a{
+  color:inherit;text-decoration:underline dotted transparent;transition:text-decoration-color .2s ease;
+}
+.card a:hover,.edu-item a:hover,.skill-card a:hover{ text-decoration-color:currentColor }
+
+.lead{margin:0;font-size:var(--fs-p)}
+.meta,.muted{font-size:var(--fs-meta);opacity:.9}
+
+/* ---- Summary bigger (first section card) ---- */
+.section:first-of-type .card .section-title{
+  font-size:calc(var(--fs-h2) * 1.12) !important;
+}
+.section:first-of-type .card .lead{
+  font-size:calc(var(--fs-p) * 1.18) !important;
+  line-height:1.9;
+}
+.section:first-of-type .card{ padding:30px 30px 28px !important; }
+
+/* Prevent parent container-card hover from affecting children (skills/edu/timeline) */
+.card:has(.skills-grid):hover,
+.card:has(.edu):hover,
+.card:has(.timeline):hover{
+  background:var(--dark-panel); color:var(--dark-ink);
+  border-color:rgba(255,255,255,.08); box-shadow:var(--shadow);
 }
 
-main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background-color: var(--light-text-color); /* White background for content */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+/* Allow hover swap for simple/lone cards (e.g., Summary) */
+.card:not(:has(.skills-grid, .edu, .timeline)):hover{
+  background:var(--light-panel); color:var(--light-ink);
+  border-color:#d7e1f4; box-shadow:0 18px 48px rgba(59,130,246,.16);
+}
+.card:not(:has(.skills-grid, .edu, .timeline)):hover .section-title{
+  border-bottom-color:var(--light-divider);
 }
 
-h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+/* ---------- Education ---------- */
+.edu{display:flex;flex-direction:column;gap:14px}
+.edu-item h3{margin:.2rem 0 .4rem;font-size:var(--fs-h3)}
+.edu-item:hover{
+  background:var(--light-panel); color:var(--light-ink);
+  border-color:#d7e1f4; box-shadow:0 16px 44px rgba(124,58,237,.16);
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
+/* ---------- Skills (2 cols equal) ---------- */
+.skills-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:12px;
+}
+@media (max-width:720px){.skills-grid{grid-template-columns:1fr}}
+.skill-title{margin:0 0 .45rem;font-size:calc(var(--fs-h3)*1.04);font-weight:900}
+.skill-body{margin:0;font-size:var(--fs-p);line-height:1.75}
+
+/* decorative overlay; must not block hover */
+.skill-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(130deg,rgba(59,130,246,.10),rgba(124,58,237,.10));
+  opacity:0;transition:opacity .25s ease;pointer-events:none; /* why: keep hover working */
+}
+.skill-card:hover{
+  background:var(--light-panel); color:var(--light-ink);
+  border-color:#d7e1f4; box-shadow:0 20px 52px rgba(2,6,23,.20);
+}
+.skill-card:hover::before{opacity:.55}
+
+/* ---------- Timeline (Experience) ---------- */
+.timeline{list-style:none;margin:0;padding:6px 0 0;position:relative}
+.timeline:before{
+  content:"";position:absolute;left:5px;top:0;bottom:0;width:2px;
+  background:currentColor;opacity:.6;
+}
+.timeline .tl-item{
+  position:relative;margin:8px 0;padding:14px 18px;border-radius:14px;
+  transition:background .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease;
+  border:1px solid transparent;background:rgba(255,255,255,.02);z-index:0;
+  display:flex;gap:14px;
+}
+.timeline .tl-item *{color:inherit !important} /* override muted/meta fixed colors */
+.timeline .tl-dot{
+  flex:0 0 10px;height:10px;border-radius:50%;
+  background:var(--accent);margin-top:.6rem;box-shadow:0 0 0 5px var(--accent-veil);
+}
+.timeline .tl-content{flex:1}
+.timeline .tl-item h3{margin:0 0 6px;font-weight:900;font-size:var(--fs-h3)}
+.timeline .tl-item .meta{font-size:var(--fs-meta);opacity:.95}
+.timeline .tl-item .muted{font-size:var(--fs-meta)}
+.timeline .tl-item:hover{
+  background:var(--light-panel); color:var(--light-ink);
+  border-color:#d7e1f4; box-shadow:0 14px 36px rgba(59,130,246,.16); z-index:1;
 }
 
-a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(14px);animation:none}
+.reveal.in{opacity:1;transform:none;animation:fadeUp .6s ease forwards}
+@keyframes fadeUp{from{opacity:.01;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- Footer ---------- */
+.footer{padding:42px 0;color:#7a8599;border-top:2px solid rgba(14,22,38,.14);text-align:center}
+
+/* ---------- RTL (global) ---------- */
+html[dir="rtl"] body{text-align:right}
+html[dir="rtl"] .hero-actions{justify-content:center}
+html[dir="rtl"] .pill{ /* handled above */ }
+
+/* ===== RTL for TIMELINE (STRICT) ===== */
+html[dir="rtl"] .timeline{
+  direction:rtl;
+  padding-right:6px !important;
+  padding-left:0 !important;
+}
+html[dir="rtl"] .timeline:before{
+  right:5px !important;
+  left:auto !important;
+}
+html[dir="rtl"] .timeline .tl-item,
+html[dir="rtl"] .timeline > li{
+  display:flex !important;
+  flex-direction:row-reverse !important;  /* النقطة يمين */
+  text-align:right !important;
+  padding-right:18px !important;
+  padding-left:14px !important;
+}
+html[dir="rtl"] .timeline .tl-content,
+html[dir="rtl"] .timeline .tl-item h3,
+html[dir="rtl"] .timeline .tl-item p,
+html[dir="rtl"] .timeline .tl-item .meta,
+html[dir="rtl"] .timeline .tl-item .muted{
+  text-align:right !important;
+  direction:rtl !important;
+  unicode-bidi:plaintext;
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
+/* Fallback: لو أي <li> مش واخد .tl-item طبّق نفس الشكل */
+.timeline > li:not(.tl-item){
+  position:relative;display:flex;gap:14px;margin:8px 0;padding:14px 18px;border-radius:14px;
+  border:1px solid transparent;background:rgba(255,255,255,.02);
+  transition:background .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease;
+  z-index:0;color:inherit;
+}
+.timeline > li:not(.tl-item) *{color:inherit !important}
+html[dir="rtl"] .timeline > li{
+  flex-direction:row-reverse !important;text-align:right !important;
+  padding-right:18px !important;padding-left:14px !important;
+}
+.timeline > li:not(.tl-item):hover{
+  background:var(--light-panel); color:var(--light-ink);
+  border-color:#d7e1f4; box-shadow:0 14px 36px rgba(59,130,246,.16); z-index:1;
+}
+.timeline > li:not(.tl-item) .tl-dot{
+  flex:0 0 10px;height:10px;border-radius:50%;background:var(--accent);
+  margin-top:.6rem;box-shadow:0 0 0 5px var(--accent-veil);
 }
 
-li {
-    margin-bottom: 0.5rem;
+/* ---------- Dark-scheme compatibility ---------- */
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0f1626; }
 }
-
-/* Experience & Education list styling */
-main ul li {
-    margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    border-left: 3px solid var(--secondary-color);
-}
-
-main ul li strong {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-main ul li em {
-    font-style: normal;
-    color: var(--grey-text-color);
-    display: block;
-    margin-bottom: 0.2rem;
-    font-size: 0.95rem;
-}
-
-/* Skills list styling */
-h2 + p + ul {
-    border-left: none;
-    padding-left: 0;
-}
-
-h2 + p + ul li {
-    background-color: var(--secondary-color); /* Use secondary color for skills */
-    color: var(--light-text-color); /* Light text on skills */
-    padding: 0.6rem 1.2rem;
-    margin-bottom: 0.7rem;
-    border-radius: 5px;
-    display: inline-block;
-    margin-right: 0.7rem;
-    font-size: 0.9rem;
-    border-left: none;
-    padding-left: 1.2rem;
-}
-
-footer {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 1.5rem 0;
-    color: var(--grey-text-color);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        margin: 1.5rem;
-        padding: 1rem;
-    }
-    header h1 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-    header p {
-        font-size: 1rem;
-    }
-    main {
-        margin: 1rem;
-        padding: 0.8rem;
-        border-radius: 0;
-    }
-    h2 {
-        font-size: 1.3rem;
-    }
-    main ul li strong {
-        font-size: 1rem;
-    }
-    /* Stack skills vertically */
-    h2 + p + ul li {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
-}
-
-/* Profile Photo Styling */
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 1rem auto;
-    border: 5px solid var(--light-text-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Language Switch Button */
-.lang-switch-container {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-}
-
-#lang-toggle {
-    padding: 0.5rem 1rem;
-    background-color: var(--secondary-color);
-    color: var(--light-text-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-#lang-toggle:hover {
-    background-color: var(--primary-color);
-}
-
-/* RTL Styling */
-html[dir="rtl"] body {
-    text-align: right;
-}
-
-html[dir="rtl"] main ul li {
-    padding-left: 0;
-    padding-right: 1rem;
-    border-left: none;
-    border-right: 3px solid var(--secondary-color);
-}
-
-html[dir="rtl"] h2 + p + ul li {
-    margin-right: 0;
-    margin-left: 0.7rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    border-right: none;
-}
-
-html[dir="rtl"] .lang-switch-container {
-    right: auto;
-    left: 1rem;
-}
-
-/* Adjust list item alignment for RTL */
-html[dir="rtl"] ul {
-    padding-right: 0;
-}
-
-
+/* End of style.css */
