@@ -11,8 +11,7 @@ const translations = {
 
     phoneLabel:"Phone:", emailLabel:"Email:", linkedinLabel:"LinkedIn:",
     summaryTitle:"Summary",
-    summaryText:"IT Manager with 5+ years of experience leading cross-functional teams and delivering end-to-end Odoo implementations and digital transformation. Strong in business analysis (As-Is/To-Be, Gap Analysis, requirements), UAT, training, and data migration. Professional in Odoo Studio and building websites on Odoo. Experienced with email & domain infrastructure across Microsoft 365, Google Workspace, Zoho, GoDaddy/cPanel/Cloudflare—including DNS (MX, SPF, DKIM, DMARC) and SMTP/IMAP—plus website and hosting configurations. Committed to robust, reliable solutions aligned with business goals and continuous improvement.",
-
+    summaryText:"IT Manager with 5+ years of experience leading cross-functional teams and delivering end-to-end Odoo implementations and digital transformation. Strong in business analysis (As-Is/To-Be, Gap Analysis, requirements), UAT, training, and data migration. Professional in Odoo Studio and building websites on Odoo. Experienced with email & domain infrastructure across Microsoft 365, Google Workspace, Zoho, GoDaddy/cPanel and hosting configurations. Committed to robust, reliable solutions aligned with business goals and continuous improvement.",
     experienceTitle:"Experience",
     exp1Title:"IT Manager", exp1Company:"Bin Shujaa Co.", exp1Location:"Riyadh, Saudi Arabia",
     exp1DurationLabel:"Duration:", exp1Duration:"October 2024 – Present",
@@ -63,7 +62,7 @@ const translations = {
     switchLangButton:"English",
     phoneLabel:"الهاتف:", emailLabel:"البريد الإلكتروني:", linkedinLabel:"لينكدإن:",
     summaryTitle:"الملخص",
-    summaryText:"مدير تقنية معلومات بخبرة تفوق 5 سنوات في قيادة الفرق وتنفيذ أودو من البداية للنهاية والتحول الرقمي. متمكن في تحليل الأعمال (As-Is/To-Be، Gap Analysis، جمع المتطلبات)، ‏UAT، التدريب، وترحيل البيانات. محترف في Odoo Studio وبناء مواقع على Odoo. خبرة في بنية الإيميل والدومين عبر Microsoft 365 وGoogle Workspace وZoho وGoDaddy/cPanel/Cloudflare — بما يشمل DNS وSMTP/IMAP — بالإضافة إلى تهيئة المواقع والاستضافة. ملتزم بحلول قوية وموثوقة متسقة مع أهداف الأعمال والتحسين المستمر.",
+    summaryText:"مدير تقنية معلومات بخبرة تفوق 5 سنوات في قيادة الفرق وتنفيذ أودو من البداية للنهاية والتحول الرقمي. متمكن في تحليل الأعمال (As-Is/To-Be، Gap Analysis، جمع المتطلبات)، ‏UAT، التدريب، وترحيل البيانات. محترف في Odoo Studio وبناء مواقع على Odoo. خبرة في بنية الإيميل والدومين عبر Microsoft 365 وGoogle Workspace وZoho وGoDaddy/cPanel/Cloudflare — بالإضافة إلى تهيئة المواقع والاستضافة. ملتزم بحلول قوية وموثوقة متسقة مع أهداف الأعمال والتحسين المستمر.",
     experienceTitle:"الخبرة",
     exp1Title:"مدير تقنية المعلومات", exp1Company:"شركة بن شجاع", exp1Location:"الرياض، السعودية",
     exp1DurationLabel:"المدة:", exp1Duration:"أكتوبر 2024 – الآن",
